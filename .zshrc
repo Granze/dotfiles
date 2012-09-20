@@ -1,0 +1,1 @@
+/home/granze/Dropbox/preferences/zsh/.zshrc
