@@ -1,0 +1,14 @@
+{
+	"auto_upgrade_last_run": 1348178348,
+	"installed_packages":
+	[
+		"AngularJS",
+		"Git",
+		"Goto-CSS-Declaration",
+		"LESS",
+		"Package Control",
+		"SCSS",
+		"SCSS Snippets",
+		"SideBarEnhancements"
+	]
+}
