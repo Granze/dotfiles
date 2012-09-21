@@ -8,5 +8,6 @@
   "tab_completion": true,
   "save_on_focus_lost": true,
   "highlight_line": true,
-  "highlight_modified_tabs": true
+  "highlight_modified_tabs": true,
+  "shift_tab_unindent": true
 }
