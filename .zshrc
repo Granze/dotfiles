@@ -9,7 +9,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias tunnel="ssh  -i ~/.ssh/mmangione ubuntu@176.34.243.236 -L 3306:beintoords2.cbqogiqebrzc.eu-west-1.rds.amazonaws.com:3306"
 alias gti="git"
 alias g="git"
 
