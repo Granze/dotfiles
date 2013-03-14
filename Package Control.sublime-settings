@@ -1,0 +1,29 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Can I Use",
+		"cdnjs",
+		"ColorPicker",
+		"Emmet",
+		"Emmet Css Snippets",
+		"EncodingHelper",
+		"Git",
+		"Handlebars",
+		"HTML5",
+		"JavaScript Snippets",
+		"JsFormat",
+		"LESS",
+		"LiveReload",
+		"Markdown Preview",
+		"Package Control",
+		"Sass",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"View In Browser"
+	],
+	"repositories":
+	[
+		"https://github.com/Granze/Sublime2-snippets"
+	]
+}
