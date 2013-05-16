@@ -2,24 +2,23 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
-		"Can I Use",
+		"Bower",
 		"cdnjs",
-		"ColorPicker",
 		"Emmet",
 		"Emmet Css Snippets",
 		"EncodingHelper",
 		"Git",
+		"Grunt",
 		"Handlebars",
 		"HTML5",
 		"JavaScript Snippets",
 		"JsFormat",
-		"LESS",
-		"LiveReload",
 		"Markdown Preview",
 		"Package Control",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeLinter",
+		"TernJS",
 		"View In Browser"
 	],
 	"repositories":
