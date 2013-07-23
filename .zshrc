@@ -17,6 +17,11 @@ antigen-bundle zsh-users/zsh-history-substring-search
 
 antigen-apply
 
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
 ## Aliases
 alias ..="cd .."
 alias ...="cd ../.."
