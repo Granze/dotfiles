@@ -15,12 +15,17 @@ antigen-bundle vagrant
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
 
+#load default theme
+antigen theme Granze/G-zsh-theme-2 granze2
+
 antigen-apply
+
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
 
 ## Aliases
 alias ..="cd .."
