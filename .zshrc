@@ -1,5 +1,5 @@
-#antigen installation
-# mkdir ~/.antigen; cd ~/.antigen; git clone https://github.com/zsh-users/antigen.git
+# Antigen installation
+# cd ~; git clone https://github.com/zsh-users/antigen.git .antigen
 
 source "$HOME/.antigen/antigen.zsh"
 
