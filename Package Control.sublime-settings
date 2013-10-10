@@ -1,7 +1,7 @@
 {
-	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"AngularJS",
 		"Bower",
 		"cdnjs",
 		"Emmet",
@@ -20,9 +20,5 @@
 		"SublimeLinter",
 		"TernJS",
 		"View In Browser"
-	],
-	"repositories":
-	[
-		"https://github.com/Granze/Sublime2-snippets"
 	]
 }
