@@ -1,8 +1,5 @@
 {
-	"color_scheme": "Packages/Theme - Flatland/Flatland-Monokai.tmTheme",
-	"theme": "Flatland.sublime-theme",
 	"find_selected_text": true,
-	"font_size": 10.0,
 	"highlight_line": true,
 	"hot_exit": false,
 	"ignored_packages":
@@ -17,5 +14,7 @@
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"ensure_newline_at_eof_on_save": true,
+	"highlight_modified_tabs": true
 }
