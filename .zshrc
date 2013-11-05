@@ -3,6 +3,7 @@
 
 source "$HOME/.antigen/antigen.zsh"
 
+# plugins
 antigen-use oh-my-zsh
 antigen-bundle git
 antigen-bundle svn
@@ -15,11 +16,10 @@ antigen-bundle vagrant
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
 
-#load default theme
+# default theme
 antigen theme Granze/G-zsh-theme-2 granze2
 
 antigen-apply
-
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
@@ -33,3 +33,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias gti="git"
+
+# functions
+function subl(){ command subl "$@" & }
