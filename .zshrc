@@ -21,6 +21,7 @@ antigen theme Granze/G-zsh-theme-2 granze2
 
 antigen-apply
 
+
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -33,6 +34,11 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias gti="git"
+alias ains="sudo apt-get install"
+alias aupd="sudo apt-get update"
+alias aupg="sudo apt-get upgrade"
+alias apur="sudo apt-get purge"
+alias addrepo="sudo apt-add-repository && sudo apt-get update"
 
 # functions
 function subl(){ command subl "$@" & }
