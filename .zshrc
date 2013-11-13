@@ -32,4 +32,5 @@ alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
 alias addrepo="sudo apt-add-repository && sudo apt-get update"
 
-function subl(){ command subl "$@" & }
+function subl() { command subl "$@" 2&>1 >/dev/null }
+function npmls() { npm ls -g --depth=0 "$@" 2>/dev/null }
