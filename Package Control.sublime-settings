@@ -2,6 +2,7 @@
 	"installed_packages":
 	[
 		"AngularJS",
+		"Nodejs",
 		"Bower",
 		"cdnjs",
 		"Emmet",
@@ -11,8 +12,7 @@
 		"Grunt",
 		"Handlebars",
 		"HTML5",
-		"JavaScript Snippets",
-		"JsFormat",
+		"HTML-CSS-JS Prettify",
 		"Markdown Preview",
 		"Package Control",
 		"Sass",
