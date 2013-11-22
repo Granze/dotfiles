@@ -2,23 +2,24 @@
 	"installed_packages":
 	[
 		"AngularJS",
-		"Nodejs",
-		"Bower",
 		"cdnjs",
+		"EditorConfig",
 		"Emmet",
 		"Emmet Css Snippets",
 		"EncodingHelper",
 		"Git",
-		"Grunt",
 		"Handlebars",
-		"HTML5",
 		"HTML-CSS-JS Prettify",
+		"HTML5",
 		"Markdown Preview",
+		"Meld diff",
+		"Nodejs",
 		"Package Control",
 		"Sass",
-		"SideBarEnhancements",
 		"SublimeLinter",
 		"TernJS",
+		"Theme - Flatland",
+		"TypeScript",
 		"View In Browser"
 	]
 }
