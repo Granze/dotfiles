@@ -1,17 +1,18 @@
 source "$HOME/.antigen/antigen.zsh"
 
 antigen-use oh-my-zsh
-antigen-bundle git
-antigen-bundle svn
-antigen-bundle gem
-antigen-bundle npm
+antigen-bundle arialdomartini/oh-my-git
 antigen-bundle bower
 antigen-bundle command-not-found
+antigen-bundle gem
+antigen-bundle git
+antigen-bundle node
+antigen-bundle npm
 antigen-bundle sublime
+antigen-bundle svn
 antigen-bundle vagrant
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
-antigen-bundle arialdomartini/oh-my-git
 
 antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
 
