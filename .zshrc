@@ -30,11 +30,15 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias nupd="sudo npm update -g"
 alias gti="git"
+
 alias ains="sudo apt-get install"
 alias aupd="sudo apt-get update"
 alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
 alias addrepo="sudo apt-add-repository && sudo apt-get update"
+
+alias cba="cordova build android"
+alias cra="cordova run android"
 
 function subl() { command subl "$@" > /dev/null 2>&1 & }
 function npmls() { npm ls -g --depth=0 "$@" 2>/dev/null }
