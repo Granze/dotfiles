@@ -29,6 +29,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias nupd="sudo npm update -g"
+alias dins="bower install && npm install"
 alias gti="git"
 
 alias ains="sudo apt-get install"
