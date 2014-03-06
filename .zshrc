@@ -38,11 +38,12 @@ alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
 alias addrepo="sudo apt-add-repository && sudo apt-get update"
 
+alias npmls=npmlist
+
 alias cba="cordova build android"
 alias cra="cordova run android"
 
 function subl() { command subl "$@" > /dev/null 2>&1 & }
-function npmls() { npm ls -g --depth=0 "$@" 2>/dev/null }
 
 export PATH=/opt/android-sdk-linux/platform-tools:$PATH
 export PATH=/opt/android-sdk-linux/tools:$PATH
