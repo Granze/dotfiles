@@ -30,7 +30,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias nupd="sudo npm update -g"
 alias dins="bower install && npm install"
+
 alias gti="git"
+alias s="git status -s"
 
 alias ains="sudo apt-get install"
 alias aupd="sudo apt-get update"
@@ -49,3 +51,4 @@ export PATH=/opt/android-sdk-linux/platform-tools:$PATH
 export PATH=/opt/android-sdk-linux/tools:$PATH
 export ANDROID_HOME=/opt/android-sdk-linux/platforms/android-17
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export CATALINA_HOME=~/projects/tomcat/
