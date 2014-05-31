@@ -10,7 +10,6 @@ antigen-bundle node
 antigen-bundle npm
 antigen-bundle sublime
 antigen-bundle svn
-antigen-bundle vagrant
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
 
@@ -40,8 +39,6 @@ alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
 alias addrepo="sudo apt-add-repository && sudo apt-get update"
 
-alias npmls=npmlist
-
 alias cba="cordova build android"
 alias cra="cordova run android"
 
@@ -52,3 +49,4 @@ export PATH=/opt/android-sdk-linux/tools:$PATH
 export ANDROID_HOME=/opt/android-sdk-linux/platforms/android-17
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export CATALINA_HOME=~/projects/tomcat/
+export PATH=$HOME/.node/bin:$PATH
