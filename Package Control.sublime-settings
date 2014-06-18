@@ -8,6 +8,7 @@
 		"Emmet Css Snippets",
 		"EncodingHelper",
 		"Git",
+		"GitGutter",
 		"Handlebars",
 		"HTML-CSS-JS Prettify",
 		"HTML5",
@@ -16,10 +17,8 @@
 		"Nodejs",
 		"Package Control",
 		"Sass",
+		"SideBarEnhancements",
 		"SublimeLinter",
-		"TernJS",
-		"Theme - Flatland",
-		"TypeScript",
-		"View In Browser"
+		"TernJS"
 	]
 }
