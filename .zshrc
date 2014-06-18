@@ -2,14 +2,17 @@ source "$HOME/.antigen/antigen.zsh"
 
 antigen-use oh-my-zsh
 antigen-bundle arialdomartini/oh-my-git
-antigen-bundle bower
 antigen-bundle command-not-found
-antigen-bundle gem
+antigen-bundle svn
 antigen-bundle git
 antigen-bundle node
+antigen-bundle bower
 antigen-bundle npm
 antigen-bundle sublime
-antigen-bundle svn
+antigen-bundle sudo
+antigen-bundle gem
+antigen-bundle ruby
+antigen-bundle rails
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
 
@@ -28,7 +31,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias nupd="sudo npm update -g"
-alias dins="bower install && npm install"
+alias depins="bower install && npm install"
 
 alias gti="git"
 alias s="git status -s"
@@ -37,10 +40,6 @@ alias ains="sudo apt-get install"
 alias aupd="sudo apt-get update"
 alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
-alias addrepo="sudo apt-add-repository && sudo apt-get update"
-
-alias cba="cordova build android"
-alias cra="cordova run android"
 
 function subl() { command subl "$@" > /dev/null 2>&1 & }
 
