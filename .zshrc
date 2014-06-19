@@ -35,6 +35,7 @@ alias depins="bower install && npm install"
 
 alias gti="git"
 alias s="git status -s"
+alias co="git checkout"
 
 alias ains="sudo apt-get install"
 alias aupd="sudo apt-get update"
