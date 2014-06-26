@@ -50,3 +50,4 @@ export ANDROID_HOME=/opt/android-sdk-linux/platforms/android-17
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export CATALINA_HOME=~/projects/tomcat/
 export PATH=$HOME/.node/bin:$PATH
+export NODE_PATH=$NODE_PATH:/home/granze/.node/lib/node_modules
