@@ -2,7 +2,6 @@
 	"installed_packages":
 	[
 		"AngularJS",
-		"cdnjs",
 		"EditorConfig",
 		"Emmet",
 		"Emmet Css Snippets",
@@ -14,11 +13,10 @@
 		"HTML5",
 		"Markdown Preview",
 		"Meld diff",
-		"Nodejs",
 		"Package Control",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeLinter",
-		"TernJS"
+		"TernJS",
 	]
 }

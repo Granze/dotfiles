@@ -8,7 +8,6 @@ antigen-bundle git
 antigen-bundle node
 antigen-bundle bower
 antigen-bundle npm
-antigen-bundle sublime
 antigen-bundle sudo
 antigen-bundle gem
 antigen-bundle ruby
@@ -30,8 +29,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias nupd="sudo npm update -g"
-alias depins="bower install && npm install"
+alias nupd="npm update -g"
+alias dins="bower install && npm install"
 
 alias gti="git"
 alias s="git status -s"
