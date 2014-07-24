@@ -47,6 +47,9 @@ export PATH=/opt/android-sdk-linux/platform-tools:$PATH
 export PATH=/opt/android-sdk-linux/tools:$PATH
 export ANDROID_HOME=/opt/android-sdk-linux/platforms/android-17
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-export CATALINA_HOME=~/projects/tomcat/
 export PATH=$HOME/.node/bin:$PATH
 export NODE_PATH=$NODE_PATH:/home/granze/.node/lib/node_modules
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
