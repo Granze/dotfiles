@@ -3,12 +3,12 @@ source "$HOME/.antigen/antigen.zsh"
 antigen-use oh-my-zsh
 antigen-bundle arialdomartini/oh-my-git
 antigen-bundle command-not-found
-antigen-bundle svn
 antigen-bundle git
 antigen-bundle node
 antigen-bundle bower
 antigen-bundle npm
 antigen-bundle sudo
+antigen-bundle tmuxinator
 antigen-bundle gem
 antigen-bundle ruby
 antigen-bundle rails
@@ -45,6 +45,7 @@ alias apur="sudo apt-get purge"
 
 function subl() { command subl "$@" > /dev/null 2>&1 & }
 
+export EDITOR="vim"
 export PATH=/opt/android-sdk-linux/platform-tools:$PATH
 export PATH=/opt/android-sdk-linux/tools:$PATH
 export ANDROID_HOME=/opt/android-sdk-linux/platforms/android-17
