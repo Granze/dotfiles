@@ -1,25 +1,21 @@
 {
 	"installed_packages":
 	[
-		"AngularJS",
 		"Color Highlighter",
 		"EditorConfig",
 		"Emmet",
 		"Emmet Css Snippets",
 		"EncodingHelper",
 		"GitGutter",
-		"Haml",
 		"Handlebars",
 		"HTML-CSS-JS Prettify",
 		"HTML5",
 		"Markdown Preview",
-		"Meld diff",
 		"Package Control",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeGit",
 		"SublimeLinter",
-		"TernJS",
 		"View In Browser"
 	]
 }
