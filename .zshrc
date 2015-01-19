@@ -9,12 +9,6 @@ antigen-bundle bower
 antigen-bundle npm
 antigen-bundle sudo
 antigen-bundle sublime
-antigen-bundle tmuxinator
-antigen-bundle gem
-antigen-bundle ruby
-antigen-bundle rbenv
-antigen-bundle rails
-antigen-bundle bundler
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
 
