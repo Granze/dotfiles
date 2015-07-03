@@ -6,7 +6,6 @@ antigen-bundle command-not-found
 antigen-bundle git
 antigen-bundle node
 antigen-bundle bower
-antigen-bundle npm
 antigen-bundle sudo
 antigen-bundle sublime
 antigen-bundle zsh-users/zsh-syntax-highlighting
@@ -49,6 +48,8 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 eval "$(rbenv init -)"
-
-unset MANPATH
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export NVM_SYMLINK_CURRENT=true
+export NVM_DIR="/home/granze/.nvm"
+export PATH=$PATH:$NVM_DIR/current/bin
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH=$PATH:/opt/google_appengine/
