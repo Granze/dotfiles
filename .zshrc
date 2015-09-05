@@ -10,15 +10,13 @@ antigen bundle sindresorhus/pure
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle zsh-users/zsh-history-substring-search
 
-#antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
-
 antigen-apply
 
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
-unsetopt correct_all
+#unsetopt correct_all
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -40,9 +38,6 @@ export NPM_PACKAGES="${HOME}/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$PATH:/opt/google_appengine/"
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-#eval "$(rbenv init -)"
 export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/home/granze/.nvm"
 export PATH=$PATH:$NVM_DIR/current/bin
