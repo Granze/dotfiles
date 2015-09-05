@@ -3,8 +3,8 @@ source "$HOME/.antigen/antigen.zsh"
 antigen-use oh-my-zsh
 antigen-bundle git
 antigen-bundle node
-antigen-bundle bower
 antigen-bundle sudo
+antigen-bundle lein
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 antigen-bundle zsh-users/zsh-syntax-highlighting
@@ -24,8 +24,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias nupd="npm update -g"
-alias dins="bower install && npm install"
 
 alias gti="git"
 alias s="git status -s"
@@ -36,19 +34,17 @@ alias aupd="sudo apt-get update"
 alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
 
-alias gw="gulp watch"
-alias gb="gulp build"
-
 export EDITOR="vim"
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-eval "$(rbenv init -)"
+export PATH="$PATH:/opt/google_appengine/"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+#eval "$(rbenv init -)"
 export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/home/granze/.nvm"
 export PATH=$PATH:$NVM_DIR/current/bin
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH=$PATH:/opt/google_appengine/
+
