@@ -4,7 +4,6 @@ antigen-use oh-my-zsh
 antigen-bundle git
 antigen-bundle node
 antigen-bundle sudo
-antigen-bundle lein
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 antigen-bundle zsh-users/zsh-syntax-highlighting
