@@ -31,12 +31,9 @@ alias aupd="sudo apt-get update"
 alias aupg="sudo apt-get upgrade"
 alias apur="sudo apt-get purge"
 
-export EDITOR="vim"
+export EDITOR="gedit"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-export NPM_PACKAGES="${HOME}/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-export PATH="$NPM_PACKAGES/bin:$PATH"
-export PATH="$PATH:/opt/google_appengine/"
+export PATH=~/.npm-global/bin:$PATH
 export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/home/granze/.nvm"
 export PATH=$PATH:$NVM_DIR/current/bin
