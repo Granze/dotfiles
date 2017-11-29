@@ -1,21 +1,28 @@
-source "$HOME/.antigen/antigen.zsh"
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+fi
 
-antigen-use oh-my-zsh
-antigen-bundle git
-antigen-bundle node
-antigen-bundle sudo
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-history-substring-search
+source ~/.zplug/init.zsh
 
-antigen-apply
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
 
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
 
-#unsetopt correct_all
+zplug load
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -25,17 +32,15 @@ alias .....="cd ../../../.."
 alias gti="git"
 alias s="git status -s"
 alias co="git checkout"
+alias ws="webstorm"
+alias wstorm="webstorm"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-alias ains="sudo apt-get install"
-alias aupd="sudo apt-get update"
-alias aupg="sudo apt-get upgrade"
-alias apur="sudo apt-get purge"
-
-export EDITOR="gedit"
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 export PATH=~/.npm-global/bin:$PATH
-export NVM_SYMLINK_CURRENT=true
-export NVM_DIR="/home/granze/.nvm"
-export PATH=$PATH:$NVM_DIR/current/bin
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/bin:$PATH"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+export PATH="$HOME/.yarn/bin:$PATH"
