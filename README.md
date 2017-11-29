@@ -1,7 +1,9 @@
-#Just my dotfiles
+# Just my dotfiles
 
-- zsh configuration + [Antigen](https://github.com/zsh-users/antigen)
+- zsh configuration + [Zplug](https://github.com/zplug/zplug)
 - tmux configuration
 
-##Antigen installation
-`cd ~; git clone https://github.com/zsh-users/antigen.git .antigen`
+## Installation
+- install zsh
+- set your terminal to run `zsh` command on startup
+- add the .zshrc to your home folder
