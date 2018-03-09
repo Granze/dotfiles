@@ -1,25 +1,23 @@
-if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
-  source ~/.zplug/init.zsh && zplug update --self
+if [[ ! -d ~/.antigen ]]; then
+  git clone https://github.com/zsh-users/antigen.git ~/.antigen
+  source $HOME/.antigen/antigen.zsh
 fi
 
-source ~/.zplug/init.zsh
+source $HOME/.antigen/antigen.zsh
 
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
+antigen use oh-my-zsh
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
+antigen-bundle git
+antigen-bundle npm
+antigen-bundle yarn
+antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen-bundle zsh-users/zsh-history-substring-search
+antigen-bundle zsh-users/zsh-autosuggestions
+antigen-bundle zsh-users/zsh-completions
+antigen-bundle mafredri/zsh-async
+antigen-bundle sindresorhus/pure
 
-zplug load
+antigen apply
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -33,7 +31,6 @@ alias gti="git"
 alias s="git status -s"
 alias co="git checkout"
 alias ws="webstorm"
-alias wstorm="webstorm"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 export PATH=~/.npm-global/bin:$PATH
