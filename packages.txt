@@ -1,4 +1,4 @@
-# Pacchetti brew installati da install.sh
+# Brew packages installed by install.sh
 
 fzf
 ripgrep
@@ -6,3 +6,4 @@ eza
 bat
 zoxide
 fd
+starship

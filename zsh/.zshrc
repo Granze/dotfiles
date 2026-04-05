@@ -8,8 +8,6 @@ setopt AUTO_CD
 # case-insensitive completion and globbing
 setopt NO_CASE_GLOB
 fpath=(~/.zsh/zsh-completions/src $fpath)
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
@@ -42,6 +40,9 @@ bindkey '\e[B' history-search-forward
 
 # autoload -U colors
 #colors
+
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" 2>/dev/null
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
