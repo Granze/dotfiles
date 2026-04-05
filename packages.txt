@@ -1,0 +1,8 @@
+# Pacchetti brew installati da install.sh
+
+fzf
+ripgrep
+eza
+bat
+zoxide
+fd
