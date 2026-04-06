@@ -27,23 +27,15 @@ Personal configurations for Aurora Linux (immutable / Fedora-based), managed wit
 - **Zsh** — shell + autosuggestions, syntax highlighting, completions
 - **Starship** — minimal and fast prompt (config included)
 - **FiraCode Nerd Font** — patched font with icons and ligatures
-- **CLI tools** (from `packages.txt`): `fzf`, `ripgrep`, `eza`, `bat`, `zoxide`, `fd`
+- **CLI tools** (from `packages.txt`): `fzf`, `eza`, `bat`, `zoxide`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions`
 
 ### Prerequisites
 
 System packages required (should be pre-installed on Aurora):
 
-- `zsh-autosuggestions`
-- `zsh-syntax-highlighting`
-- `zsh-completions` (optional, for extra completions in `~/.zsh/zsh-completions/src`)
 - `git`, `curl`
 
-If missing, on Aurora / immutable Fedora:
-
-```bash
-rpm-ostree install zsh-autosuggestions zsh-syntax-highlighting
-systemctl reboot   # required to apply the layer
-```
+> `fzf` and `starship` are included in Aurora by default. If missing on other distros, they will be installed via Homebrew by `install.sh`.
 
 ## Installation
 
