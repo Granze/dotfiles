@@ -3,8 +3,21 @@
 
 add_newline = true
 
+format = """
+$username\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$fill\
+$cmd_duration\
+$line_break$character"""
+
 [line_break]
 disabled = false
+
+[fill]
+symbol= ' '
 
 [username]
 style_user = 'blue bold'
@@ -16,12 +29,12 @@ show_always = true
 [hostname]
 ssh_only = false
 ssh_symbol = " "
-format = '[$ssh_symbol](bold gray) at [$hostname](bold green) '
+format = '[$ssh_symbol](bold gray) at [ $hostname](bold green) '
 disabled = false
 
 [character]
 success_symbol = '[➜](bold green) '
-error_symbol = '[✗](bold red) '
+error_symbol = '[](bold red) '
 
 [aws]
 symbol = "  "
@@ -46,7 +59,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-format = 'in [$path](bold yellow) '
+format = ' in [ $path](bold yellow) '
 
 [docker_context]
 symbol = " "
@@ -109,10 +122,15 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [ocaml]
 symbol = " "
+
+[os]
+disabled = false
+format = '[$symbol$name]($style) '
+style = 'bold blue'
 
 [os.symbols]
 Alpaquita = " "
