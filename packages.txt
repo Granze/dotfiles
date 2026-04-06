@@ -1,9 +1,10 @@
 # Brew packages installed by install.sh
 
-fzf
-ripgrep
-eza
 bat
-zoxide
-fd
+eza
+fzf
 starship
+zoxide
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting

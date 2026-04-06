@@ -1,8 +1,8 @@
+# change diectory without typing 'cd'
 setopt AUTO_CD
 
 # case-insensitive completion and globbing
 setopt NO_CASE_GLOB
-fpath=(~/.zsh/zsh-completions/src $fpath)
 
 # allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
@@ -19,8 +19,13 @@ setopt HIST_IGNORE_DUPS
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
-# Homebrew environment
+# Homebrew environment (must be early — needed by brew --prefix below)
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" 2>/dev/null
+
+# zsh-completions via Homebrew
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
@@ -51,6 +56,9 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 # ls alias with icons and grouping directories first
 alias ls="eza --icons --group-directories-first"
 
+# Use bat instead of cat for better syntax highlighting and paging
+alias cat="bat --paging=never"
+
 # Open the commit message in the editor with a pre-filled template
 _gcom_widget() {
   BUFFER='git commit -m ""'
@@ -61,15 +69,15 @@ zle -N _gcom_widget
 bindkey '^[g' _gcom_widget  # Alt+G
 
 # Autocomplete
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit  # called once, after FPATH is fully set
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|=*' 'l:|=* r:|=*'
 
 # Autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Syntax highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # fzf - fuzzy search (history CTRL+R, file CTRL+T)
 source <(fzf --zsh)
