@@ -1,0 +1,13 @@
+
+new_tab
+layout grid
+enabled_layouts fat,grid,horizontal,splits,stack,tall,vertical
+set_layout_state {"biased_cols": {"0": 0.18848167539267016}, "biased_rows": {}, "opts": {}, "class": "Grid", "all_windows": {"active_group_idx": 0, "active_group_history": [3, 1, 2], "window_groups": [{"id": 1, "window_ids": [1]}, {"id": 2, "window_ids": [2]}, {"id": 3, "window_ids": [3]}]}}
+cd /var/home/granze/Projects/faust
+
+launch 'kitty-unserialize-data={"id": 1}'
+focus
+launch 'kitty-unserialize-data={"id": 2, "cmd_at_shell_startup": "npm run dev"}'
+launch 'kitty-unserialize-data={"id": 3}'
+
+focus_tab 0
