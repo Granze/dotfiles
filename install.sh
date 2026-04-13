@@ -49,12 +49,20 @@ fi
 # ─── 4. Kitty (official installer) ──────────────────────────
 if ! command -v kitty &>/dev/null && [ ! -d "$HOME/.local/kitty.app" ]; then
   log "Installing Kitty terminal..."
-  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
-  # Create symlinks in PATH
-  mkdir -p "$HOME/.local/bin"
-  ln -sf "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/kitty"
-  ln -sf "$HOME/.local/kitty.app/bin/kitten" "$HOME/.local/bin/kitten"
-  ok "Kitty"
+  if curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n; then
+    mkdir -p "$HOME/.local/bin"
+    ln -sf "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/kitty"
+    ln -sf "$HOME/.local/kitty.app/bin/kitten" "$HOME/.local/bin/kitten"
+    if [ -x "$HOME/.local/kitty.app/bin/kitty" ]; then
+      ok "Kitty"
+    else
+      log "  WARN: Kitty installer exited 0 but binary not found at ~/.local/kitty.app/bin/kitty"
+      log "  Try manually: curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
+    fi
+  else
+    log "  WARN: Kitty installer failed. Install manually."
+    log "  Try: curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
+  fi
 else
   skip "Kitty"
 fi
@@ -104,9 +112,14 @@ for module in */; do
   [ ! -d "$module" ] && continue
 
   log "  stow $module"
-  stow --restow "$module" 2>&1 | tee -a "$LOG" || {
-    log "  WARN: stow $module failed — file conflict. Resolve manually."
-  }
+  if ! stow --restow "$module" 2>/dev/null; then
+    log "  Conflict in $module — adopting existing files and restoring from git..."
+    stow --adopt --restow "$module" 2>&1 | tee -a "$LOG"
+    # Restore our dotfiles versions (overwrite whatever was adopted)
+    git -C "$DOTFILES" checkout -- "$module/" 2>/dev/null || true
+    stow --restow "$module" 2>&1 | tee -a "$LOG" || \
+      log "  WARN: stow $module still failed — resolve manually."
+  fi
 done
 
 ok "Symlinks created"
@@ -122,13 +135,21 @@ fi
 
 if [ "$SHELL" != "$ZSH_PATH" ]; then
   log "Setting zsh as default shell..."
-  if ! grep -q "$ZSH_PATH" /etc/shells; then
-    log "WARN: $ZSH_PATH is not in /etc/shells."
-    log "  On immutable systems /etc/shells is read-only."
-    log "  Run manually: sudo sh -c 'echo $ZSH_PATH >> /etc/shells'"
+  if command -v chsh &>/dev/null; then
+    if ! grep -q "$ZSH_PATH" /etc/shells 2>/dev/null; then
+      log "  WARN: $ZSH_PATH not in /etc/shells (immutable fs)."
+      log "  Run manually: sudo sh -c 'echo $ZSH_PATH >> /etc/shells'"
+    fi
+    chsh -s "$ZSH_PATH" && ok "Default shell → zsh ($ZSH_PATH)" || \
+      log "  WARN: chsh failed — run: sudo usermod --shell $ZSH_PATH $USER"
+  elif command -v usermod &>/dev/null; then
+    log "  chsh not found, using usermod (requires sudo)..."
+    sudo usermod --shell "$ZSH_PATH" "$USER" && ok "Default shell → zsh ($ZSH_PATH)" || \
+      log "  WARN: usermod failed — set shell manually: sudo usermod --shell $ZSH_PATH $USER"
+  else
+    log "  WARN: Neither chsh nor usermod found. Set shell manually:"
+    log "  sudo usermod --shell $ZSH_PATH $USER"
   fi
-  chsh -s "$ZSH_PATH"
-  ok "Default shell → zsh ($ZSH_PATH)"
 else
   skip "Shell already set to zsh"
 fi
