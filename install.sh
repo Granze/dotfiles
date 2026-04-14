@@ -53,6 +53,17 @@ if ! command -v kitty &>/dev/null && [ ! -d "$HOME/.local/kitty.app" ]; then
     mkdir -p "$HOME/.local/bin"
     ln -sf "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/kitty"
     ln -sf "$HOME/.local/kitty.app/bin/kitten" "$HOME/.local/bin/kitten"
+    # Desktop integration
+    mkdir -p "$HOME/.local/share/applications"
+    cp "$HOME/.local/kitty.app/share/applications/kitty.desktop" "$HOME/.local/share/applications/"
+    cp "$HOME/.local/kitty.app/share/applications/kitty-open.desktop" "$HOME/.local/share/applications/"
+    KITTY_ICON="$(readlink -f "$HOME")/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png"
+    KITTY_BIN="$(readlink -f "$HOME")/.local/kitty.app/bin/kitty"
+    sed -i "s|Icon=kitty|Icon=$KITTY_ICON|g" "$HOME/.local/share/applications/kitty"*.desktop
+    sed -i "s|Exec=kitty|Exec=$KITTY_BIN|g" "$HOME/.local/share/applications/kitty"*.desktop
+    # Set kitty as default xdg terminal
+    mkdir -p "$HOME/.config"
+    echo 'kitty.desktop' > "$HOME/.config/xdg-terminals.list"
     if [ -x "$HOME/.local/kitty.app/bin/kitty" ]; then
       ok "Kitty"
     else
